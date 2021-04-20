@@ -1,0 +1,19 @@
+import csv
+from collections import Counter
+
+
+archivo= open("/home/alumno/Documentos/bgg_db_1806.csv","r")
+csvreader= csv.reader(archivo,delimiter=',')
+
+
+
+lista=[]
+for linea in csvreader:
+    if((linea[4]<'3')and (linea[17]=="Card Game" ) ):
+        lista.append(linea[3].replace("'","").replace("\"",""))
+    
+          
+
+
+print("lista de juegos de menos de 3 jugadores y categoria cartas")       
+print(lista)
